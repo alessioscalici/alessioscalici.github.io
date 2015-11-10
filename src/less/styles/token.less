@@ -1,0 +1,121 @@
+@rt-diameter: 150px;
+
+@rt-track-color: #ccc;
+@rt-spot-background: #ccc;
+@rt-spot-color: #979797;
+@rt-token-in-background: #c00000;
+@rt-token-in-color: #fff;
+@rt-token-out-background: #666;
+@rt-token-out-color: #ccc;
+
+@rt-transition: left .8s ease, transform .8s ease;
+
+.rt-token-shape {
+
+  .flex-display();
+  .flex-direction(column-reverse);
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+  top: 0;
+  height: @rt-diameter;
+  width: @rt-diameter;
+  border-radius: 50%;
+
+}
+
+.rt-track {
+  position: relative;
+  height: @rt-diameter;
+  width: @rt-diameter;
+  background: @rt-track-color;
+  margin-top: 3px;
+
+
+  .rt-spot {
+    &:extend(.rt-token-shape);
+    background: @rt-spot-background;
+    color: @rt-spot-color;
+    g {
+      fill: @rt-spot-color;
+    }
+
+    right: -@rt-diameter / 2;
+    overflow: hidden;
+    border-left: 1px solid @rt-spot-color;
+
+    -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
+
+  }
+
+
+  .rt-token-out, .rt-token-in {
+    .transform-origin();
+    .rotate(-180deg);
+    .transition(@rt-transition);
+  }
+
+  .rt-token-in {
+    &:extend(.rt-token-shape);
+    //background: @rt-token-in-background;
+    color: @rt-token-in-color;
+    left: -@rt-diameter;
+    g {
+      fill: @rt-token-in-color;
+    }
+  }
+
+  .rt-token-out {
+    &:extend(.rt-token-shape);
+    background: @rt-token-out-background;
+    color: @rt-token-out-color;
+    left: -@rt-diameter / 2;
+    g {
+      fill: @rt-token-out-color;
+    }
+
+    .blur(1px);
+  }
+
+  &:hover {
+    .rt-token-in, .rt-token-out {
+      .rotate(0deg);
+      .transition(@rt-transition);
+    }
+
+    .rt-token-in {
+      left: 0;
+    }
+    .rt-token-out {
+      left: @rt-diameter / 2;
+    }
+  }
+
+  .icon {
+    font-size: 2em;
+  }
+}
+
+.topic-aboutme {
+  background-color: darkred;
+
+
+}
+.topic-career {
+  background-color: darkblue;
+}
+.topic-contacts {
+  background-color: darkgreen;
+}
+
+
+.aboutme-icon {
+  svg {
+    height: 4em;
+  }
+  g {
+    fill: white;
+  }
+}
+

@@ -1,0 +1,318 @@
+/**
+ * Global Reset of all HTML Elements
+ *
+ * Resetting all of our HTML Elements ensures a smoother
+ * visual transition between browsers. If you don't believe me,
+ * try temporarily commenting out this block of code, then go
+ * and look at Mozilla versus Safari, both good browsers with
+ * a good implementation of CSS. The thing is, all browser CSS
+ * defaults are different and at the end of the day if visual
+ * consistency is what we're shooting for, then we need to
+ * make sure we're resetting all spacing elements.
+ *
+ */
+html,
+body {
+  border: 0;
+  font-family: monospace;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #1C2122;
+}
+div,
+span,
+object,
+iframe,
+img,
+table,
+caption,
+thead,
+tbody,
+tfoot,
+tr,
+tr,
+td,
+article,
+aside,
+canvas,
+details,
+figure,
+hgroup,
+menu,
+nav,
+footer,
+header,
+section,
+summary,
+mark,
+audio,
+video {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+address,
+cit,
+code,
+del,
+dfn,
+em,
+ins,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+b,
+i,
+hr,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+legend,
+label {
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+}
+article,
+aside,
+canvas,
+figure,
+figure img,
+figcaption,
+hgroup,
+footer,
+header,
+nav,
+section,
+audio,
+video {
+  display: block;
+}
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+table caption,
+table th,
+table td {
+  text-align: left;
+  vertical-align: middle;
+}
+a img {
+  border: 0;
+}
+:focus {
+  outline: 0;
+}
+@media screen and (max-width: 549px) {
+  #menu-token.open {
+    left: 0;
+  }
+}
+#menu-token {
+  position: fixed;
+  left: -450px;
+  -webkit-transition: left 0.5s ease;
+  -moz-transition: left 0.5s ease;
+  -ms-transition: left 0.5s ease;
+  -o-transition: left 0.5s ease;
+}
+#menu-token.open {
+  -webkit-transition: left 0.5s ease;
+  -moz-transition: left 0.5s ease;
+  -ms-transition: left 0.5s ease;
+  -o-transition: left 0.5s ease;
+}
+@media screen and (min-width: 550px) {
+  #menu-token {
+    left: -100px;
+  }
+}
+@media screen and (min-width: 800px) {
+  #menu-token {
+    left: 0;
+  }
+}
+#hamburger {
+  display: block;
+}
+@media screen and (min-width: 550px) {
+  #hamburger {
+    display: none;
+  }
+}
+#content-wrapper {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+#content-wrapper #menu-placeholder {
+  -webkit-flex-basis: 0;
+  -moz-flex-basis: 0;
+  -ms-flex-basis: 0;
+  flex-basis: 0;
+  -webkit-flex-grow: 0;
+  -moz-flex-grow: 0;
+  -ms-flex-grow: 0;
+  flex-grow: 0;
+  -webkit-flex-shrink: 0;
+  -moz-flex-shrink: 0;
+  -ms-flex-shrink: 0;
+  flex-shrink: 0;
+  min-width: 0;
+  -webkit-transition: min-width 0.5s ease;
+  -moz-transition: min-width 0.5s ease;
+  -ms-transition: min-width 0.5s ease;
+  -o-transition: min-width 0.5s ease;
+}
+@media screen and (min-width: 550px) {
+  #content-wrapper #menu-placeholder {
+    min-width: 127.5px;
+  }
+}
+@media screen and (min-width: 800px) {
+  #content-wrapper #menu-placeholder {
+    min-width: 225px;
+  }
+}
+#content-wrapper #content {
+  background: red;
+}
+.rt-token-shape,
+.rt-track .rt-spot,
+.rt-track .rt-token-in,
+.rt-track .rt-token-out {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: column-reverse;
+  -moz-flex-direction: column-reverse;
+  -ms-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+}
+.rt-track {
+  position: relative;
+  height: 150px;
+  width: 150px;
+  background: #ccc;
+  margin-top: 3px;
+}
+.rt-track .rt-spot {
+  background: #ccc;
+  color: #979797;
+  right: -75px;
+  overflow: hidden;
+  border-left: 1px solid #979797;
+  -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
+}
+.rt-track .rt-spot g {
+  fill: #979797;
+}
+.rt-track .rt-token-out,
+.rt-track .rt-token-in {
+  -webkit-transform-origin: center center;
+  -moz-transform-origin: center center;
+  -ms-transform-origin: center center;
+  -o-transform-origin: center center;
+  transform-origin: center center;
+  -webkit-transform: rotate(-180deg);
+  -moz-transform: rotate(-180deg);
+  -ms-transform: rotate(-180deg);
+  -o-transform: rotate(-180deg);
+  -webkit-transition: left 0.8s ease, transform 0.8s ease;
+  -moz-transition: left 0.8s ease, transform 0.8s ease;
+  -ms-transition: left 0.8s ease, transform 0.8s ease;
+  -o-transition: left 0.8s ease, transform 0.8s ease;
+}
+.rt-track .rt-token-in {
+  color: #fff;
+  left: -150px;
+}
+.rt-track .rt-token-in g {
+  fill: #fff;
+}
+.rt-track .rt-token-out {
+  background: #666;
+  color: #ccc;
+  left: -75px;
+  -webkit-filter: blur(1px);
+  -moz-filter: blur(1px);
+  -ms-filter: blur(1px);
+  -o-filter: blur(1px);
+  filter: blur(1px);
+}
+.rt-track .rt-token-out g {
+  fill: #ccc;
+}
+.rt-track:hover .rt-token-in,
+.rt-track:hover .rt-token-out {
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  -webkit-transition: left 0.8s ease, transform 0.8s ease;
+  -moz-transition: left 0.8s ease, transform 0.8s ease;
+  -ms-transition: left 0.8s ease, transform 0.8s ease;
+  -o-transition: left 0.8s ease, transform 0.8s ease;
+}
+.rt-track:hover .rt-token-in {
+  left: 0;
+}
+.rt-track:hover .rt-token-out {
+  left: 75px;
+}
+.rt-track .icon {
+  font-size: 2em;
+}
+.topic-aboutme {
+  background-color: darkred;
+}
+.topic-career {
+  background-color: darkblue;
+}
+.topic-contacts {
+  background-color: darkgreen;
+}
+.aboutme-icon svg {
+  height: 4em;
+}
+.aboutme-icon g {
+  fill: white;
+}

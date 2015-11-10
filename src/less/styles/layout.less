@@ -1,0 +1,85 @@
+.bp-s(@rules) {
+  @media screen and (max-width: 549px) { @rules(); }
+}
+
+.bp-m(@rules) {
+  @media screen and (min-width: 550px) { @rules(); }
+}
+
+.bp-l(@rules) {
+  @media screen and (min-width: 800px) { @rules(); }
+}
+
+
+// keep the menu completely opened just in small breakpoint
+.bp-s({
+  #menu-token.open {
+    left: 0;
+  }
+});
+
+#menu-token {
+  position: fixed;
+  left: -@rt-diameter * 3;
+
+  .transition(left .5s ease);
+  &.open {
+    .transition(left .5s ease);
+  }
+
+  // medium breakpoint
+  .bp-m({
+    left: -@rt-diameter / 1.5;
+  });
+
+  // large breakpoint
+  .bp-l({
+    left: 0;
+  });
+
+}
+
+
+#hamburger {
+  display: block;
+
+  // medium breakpoint
+  .bp-m({
+    display: none;
+  });
+}
+
+
+#content-wrapper {
+  .flex-display();
+  .flex-direction(row);
+
+  #menu-placeholder {
+    .flex-basis(0);
+    .flex-grow(0);
+    .flex-shrink(0);
+
+    min-width: 0;
+
+    .transition(min-width .5s ease);
+
+    // medium breakpoint
+    .bp-m({
+      min-width: @rt-diameter * 0.85;
+    });
+
+    // large breakpoint
+    .bp-l({
+      min-width: @rt-diameter * 1.5;
+    });
+  }
+
+  #content {
+
+
+    background: red;
+
+
+  }
+  
+}
