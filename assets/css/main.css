@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Gruppo);
 /**
  * Global Reset of all HTML Elements
  *
@@ -313,4 +314,15 @@ a img {
 }
 .aboutme-icon g {
   fill: white;
+}
+#content-wrapper {
+  padding: 1em;
+}
+#content-wrapper h1 {
+  font-size: 2em;
+  text-align: center;
+  font-family: Gruppo, cursive;
+}
+#content-wrapper p {
+  text-align: justify;
 }
