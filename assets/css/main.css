@@ -135,7 +135,7 @@ a img {
 }
 #menu-token {
   position: fixed;
-  left: -225px;
+  left: -180px;
   -webkit-transition: left 0.5s ease;
   -moz-transition: left 0.5s ease;
   -ms-transition: left 0.5s ease;
@@ -149,7 +149,7 @@ a img {
 }
 @media screen and (min-width: 550px) {
   #menu-token {
-    left: -100px;
+    left: -80px;
   }
 }
 @media screen and (min-width: 800px) {
@@ -197,12 +197,12 @@ a img {
 }
 @media screen and (min-width: 550px) {
   #content-wrapper #menu-placeholder {
-    min-width: 127.5px;
+    min-width: 102px;
   }
 }
 @media screen and (min-width: 800px) {
   #content-wrapper #menu-placeholder {
-    min-width: 225px;
+    min-width: 180px;
   }
 }
 .rt-token-shape,
@@ -222,21 +222,21 @@ a img {
   justify-content: center;
   position: absolute;
   top: 0;
-  height: 150px;
-  width: 150px;
+  height: 120px;
+  width: 120px;
   border-radius: 50%;
 }
 .rt-track {
   position: relative;
-  height: 150px;
-  width: 150px;
+  height: 120px;
+  width: 120px;
   background: #ccc;
   margin-top: 3px;
 }
 .rt-track .rt-spot {
   background: #ccc;
   color: #979797;
-  right: -75px;
+  right: -60px;
   overflow: hidden;
   border-left: 1px solid #979797;
   -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
@@ -262,7 +262,7 @@ a img {
 }
 .rt-track .rt-token-in {
   color: #fff;
-  left: -150px;
+  left: -120px;
 }
 .rt-track .rt-token-in g {
   fill: #fff;
@@ -270,7 +270,7 @@ a img {
 .rt-track .rt-token-out {
   background: #666;
   color: #ccc;
-  left: -75px;
+  left: -60px;
   -webkit-filter: blur(1px);
   -moz-filter: blur(1px);
   -ms-filter: blur(1px);
@@ -295,7 +295,7 @@ a img {
   left: 0;
 }
 .rt-track:hover .rt-token-out {
-  left: 75px;
+  left: 60px;
 }
 .rt-track .icon {
   font-size: 2em;
@@ -322,7 +322,26 @@ a img {
   font-size: 2em;
   text-align: center;
   font-family: Gruppo, cursive;
+  text-transform: uppercase;
 }
 #content-wrapper p {
   text-align: justify;
+}
+section#career .career-card {
+  border: 1px solid #ccc;
+  -webkit-border-radius: 1em;
+  -moz-border-radius: 1em;
+  border-radius: 1em;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  overflow: hidden;
+}
+section#career .career-card .header {
+  background: #ccc;
+  color: black;
+  padding: 5px;
+}
+section#career .career-card .body {
+  padding: 5px;
 }
