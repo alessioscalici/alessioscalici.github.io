@@ -13,14 +13,17 @@
 
 // keep the menu completely opened just in small breakpoint
 .bp-s({
-  #menu-token.open {
+  #page-wrapper.menu-open #menu-token {
     left: 0;
   }
+ // #page-wrapper.menu-open #menu-placeholder {
+ //   min-width: @rt-diameter * 1.5;
+ // }
 });
 
 #menu-token {
   position: fixed;
-  left: -@rt-diameter * 3;
+  left: -@rt-diameter * 1.5;
 
   .transition(left .5s ease);
   &.open {
@@ -74,12 +77,4 @@
     });
   }
 
-  #content {
-
-
-    background: red;
-
-
-  }
-  
 }

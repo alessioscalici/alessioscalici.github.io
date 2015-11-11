@@ -20,6 +20,7 @@ body {
   padding: 0;
   height: 100%;
   background-color: #1C2122;
+  color: #ccc;
 }
 div,
 span,
@@ -127,13 +128,13 @@ a img {
   outline: 0;
 }
 @media screen and (max-width: 549px) {
-  #menu-token.open {
+  #page-wrapper.menu-open #menu-token {
     left: 0;
   }
 }
 #menu-token {
   position: fixed;
-  left: -450px;
+  left: -225px;
   -webkit-transition: left 0.5s ease;
   -moz-transition: left 0.5s ease;
   -ms-transition: left 0.5s ease;
@@ -202,9 +203,6 @@ a img {
   #content-wrapper #menu-placeholder {
     min-width: 225px;
   }
-}
-#content-wrapper #content {
-  background: red;
 }
 .rt-token-shape,
 .rt-track .rt-spot,
