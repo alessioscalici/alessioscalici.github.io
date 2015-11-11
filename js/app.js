@@ -12,4 +12,50 @@
   });
 
 
+
+  var timeout = null,
+    sections = $('section'),
+    rtTracks = $('.rt-track'),
+    trackMap = {};
+
+  rtTracks.each(function () {
+    trackMap[$(this).attr('id').replace('track-', '')] = this;
+  });
+
+
+  // scroll spy
+  $(window).scroll(function () {
+    if (!timeout) {
+      timeout = setTimeout(function () {
+
+        clearTimeout(timeout);
+        timeout = null;
+
+        var fromTop = $(window).scrollTop() + 200;
+        var cur = sections.map(function(){
+          if ($(this).offset().top < fromTop)
+            return this;
+        }).last();
+
+
+        rtTracks.removeClass('active');
+        $(trackMap[cur.find('.anchor').attr('id')]).addClass('active');
+
+      }, 250);
+    }
+  });
+
+
+  // smooth scroll
+  rtTracks.click(function () {
+    var targetId = $(this).attr('id').replace('track-', ''),
+      targetTop = $('#' + targetId).offset().top;
+
+
+
+    $('body,html').stop().animate({scrollTop: targetTop}, 800);
+  });
+
+
 })(jQuery);
+

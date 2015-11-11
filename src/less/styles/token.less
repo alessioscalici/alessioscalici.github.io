@@ -8,6 +8,8 @@
 @rt-token-out-background: #666;
 @rt-token-out-color: #ccc;
 
+
+
 @rt-transition: left .8s ease, transform .8s ease;
 
 .rt-token-shape {
@@ -78,7 +80,7 @@
     .blur(1px);
   }
 
-  &:hover {
+  &:hover, &.active {
     .rt-token-in, .rt-token-out {
       .rotate(0deg);
       .transition(@rt-transition);
@@ -101,10 +103,10 @@
   background-color: @section-aboutme-base-color;
 }
 .topic-career {
-  background-color: @section-aboutme-base-color;
+  background-color: @section-career-base-color;
 }
 .topic-contacts {
-  background-color: @section-aboutme-base-color;
+  background-color: @section-contacts-base-color;
 }
 
 

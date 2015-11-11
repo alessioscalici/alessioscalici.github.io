@@ -157,12 +157,57 @@ a img {
     left: 0;
   }
 }
-#hamburger {
-  display: block;
+#top-bar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: black;
+  height: 40px;
+  -webkit-transition: top 0.5s ease;
+  -moz-transition: top 0.5s ease;
+  -ms-transition: top 0.5s ease;
+  -o-transition: top 0.5s ease;
 }
 @media screen and (min-width: 550px) {
-  #hamburger {
-    display: none;
+  #top-bar {
+    top: -40px;
+    -webkit-transition: top 0.5s ease;
+    -moz-transition: top 0.5s ease;
+    -ms-transition: top 0.5s ease;
+    -o-transition: top 0.5s ease;
+  }
+}
+#page-wrapper {
+  padding-top: 40px;
+  -webkit-transition: padding-top 0.5s ease;
+  -moz-transition: padding-top 0.5s ease;
+  -ms-transition: padding-top 0.5s ease;
+  -o-transition: padding-top 0.5s ease;
+}
+@media screen and (min-width: 550px) {
+  #page-wrapper {
+    padding-top: 0;
+    -webkit-transition: padding-top 0.5s ease;
+    -moz-transition: padding-top 0.5s ease;
+    -ms-transition: padding-top 0.5s ease;
+    -o-transition: padding-top 0.5s ease;
+  }
+}
+.anchor {
+  padding-top: 40px;
+  -webkit-transition: padding-top 0.5s ease;
+  -moz-transition: padding-top 0.5s ease;
+  -ms-transition: padding-top 0.5s ease;
+  -o-transition: padding-top 0.5s ease;
+}
+@media screen and (min-width: 550px) {
+  .anchor {
+    padding-top: 0;
+    -webkit-transition: padding-top 0.5s ease;
+    -moz-transition: padding-top 0.5s ease;
+    -ms-transition: padding-top 0.5s ease;
+    -o-transition: padding-top 0.5s ease;
   }
 }
 #content-wrapper {
@@ -281,7 +326,9 @@ a img {
   fill: #ccc;
 }
 .rt-track:hover .rt-token-in,
-.rt-track:hover .rt-token-out {
+.rt-track.active .rt-token-in,
+.rt-track:hover .rt-token-out,
+.rt-track.active .rt-token-out {
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
@@ -291,10 +338,12 @@ a img {
   -ms-transition: left 0.8s ease, transform 0.8s ease;
   -o-transition: left 0.8s ease, transform 0.8s ease;
 }
-.rt-track:hover .rt-token-in {
+.rt-track:hover .rt-token-in,
+.rt-track.active .rt-token-in {
   left: 0;
 }
-.rt-track:hover .rt-token-out {
+.rt-track:hover .rt-token-out,
+.rt-track.active .rt-token-out {
   left: 60px;
 }
 .rt-track .icon {
@@ -327,7 +376,7 @@ a img {
 #content-wrapper p {
   text-align: justify;
 }
-section#career .career-card {
+section.career .career-card {
   border: 1px solid #ccc;
   -webkit-border-radius: 1em;
   -moz-border-radius: 1em;
@@ -337,11 +386,11 @@ section#career .career-card {
   background-clip: padding-box;
   overflow: hidden;
 }
-section#career .career-card .header {
+section.career .career-card .header {
   background: #ccc;
   color: black;
   padding: 5px;
 }
-section#career .career-card .body {
+section.career .career-card .body {
   padding: 5px;
 }
