@@ -253,26 +253,20 @@ a img {
     min-width: 180px;
   }
 }
-.rt-token-shape,
-.rt-track .rt-spot,
-.rt-track .rt-token-in,
-.rt-track .rt-token-out {
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flexbox;
-  display: -ms-flex;
-  display: flex;
-  -webkit-flex-direction: column-reverse;
-  -moz-flex-direction: column-reverse;
-  -ms-flex-direction: column-reverse;
-  flex-direction: column-reverse;
-  align-items: center;
-  justify-content: center;
+#menu-token {
+  z-index: 700;
+}
+.rt-token {
+  text-align: center;
+  overflow: hidden;
   position: absolute;
   top: 0;
   height: 120px;
   width: 120px;
   border-radius: 50%;
+}
+.rt-token .icon {
+  margin-top: 34.28571429px;
 }
 .rt-track {
   position: relative;
@@ -304,10 +298,11 @@ a img {
   -moz-transform: rotate(-180deg);
   -ms-transform: rotate(-180deg);
   -o-transform: rotate(-180deg);
-  -webkit-transition: left 0.8s ease, transform 0.8s ease;
-  -moz-transition: left 0.8s ease, transform 0.8s ease;
-  -ms-transition: left 0.8s ease, transform 0.8s ease;
-  -o-transition: left 0.8s ease, transform 0.8s ease;
+  -webkit-transition: left 0.8s ease, transform 0.8s ease, -webkit-transform 0.8s ease;
+  -moz-transition: left 0.8s ease, transform 0.8s ease, -webkit-transform 0.8s ease;
+  -ms-transition: left 0.8s ease, transform 0.8s ease, -webkit-transform 0.8s ease;
+  -o-transition: left 0.8s ease, transform 0.8s ease, -webkit-transform 0.8s ease;
+  -webkit-transition: left 0.5s ease, -webkit-transform 0.5s ease;
 }
 .rt-track .rt-token-in {
   color: #fff;
@@ -337,10 +332,10 @@ a img {
   -moz-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   -o-transform: rotate(0deg);
-  -webkit-transition: left 0.8s ease, transform 0.8s ease;
-  -moz-transition: left 0.8s ease, transform 0.8s ease;
-  -ms-transition: left 0.8s ease, transform 0.8s ease;
-  -o-transition: left 0.8s ease, transform 0.8s ease;
+  -webkit-transition: left 0.8s ease, transform 0.8s ease, -webkit-transform 0.8s ease;
+  -moz-transition: left 0.8s ease, transform 0.8s ease, -webkit-transform 0.8s ease;
+  -ms-transition: left 0.8s ease, transform 0.8s ease, -webkit-transform 0.8s ease;
+  -o-transition: left 0.8s ease, transform 0.8s ease, -webkit-transform 0.8s ease;
 }
 .rt-track:hover .rt-token-in,
 .rt-track.active .rt-token-in {
@@ -352,6 +347,7 @@ a img {
 }
 .rt-track .icon {
   font-size: 2em;
+  width: 100%;
 }
 .topic-aboutme {
   background-color: darkred;
@@ -362,11 +358,16 @@ a img {
 .topic-contacts {
   background-color: darkgreen;
 }
-.aboutme-icon svg {
-  height: 4em;
+.icon.icon-aboutme svg {
+  height: 1em;
+  width: 100%;
 }
-.aboutme-icon g {
-  fill: white;
+#top-bar #hamburger {
+  color: #ccc;
+  background: none;
+  -webkit-appearance: none;
+  border-width: 0;
+  font-size: 2em;
 }
 #content-wrapper {
   padding: 1em;
@@ -391,6 +392,9 @@ section.about-me p {
   -ms-transition: opacity 0.5s ease;
   -o-transition: opacity 0.5s ease;
 }
+#contact-bar[data-co-selected='skype'] #contact-bar-icons {
+  border-bottom: 1px solid #12A5F4;
+}
 #contact-bar[data-co-selected='skype'] .co.co-skype {
   height: auto;
   opacity: 1;
@@ -405,6 +409,13 @@ section.about-me p {
   -ms-transform: scale(1.5);
   -o-transform: scale(1.5);
   color: #12A5F4;
+}
+#contact-bar[data-co-selected='skype'] .icon[data-co-select='skype']:after {
+  display: block;
+  background: #12A5F4;
+}
+#contact-bar[data-co-selected='email'] #contact-bar-icons {
+  border-bottom: 1px solid #db4437;
 }
 #contact-bar[data-co-selected='email'] .co.co-email {
   height: auto;
@@ -421,6 +432,13 @@ section.about-me p {
   -o-transform: scale(1.5);
   color: #db4437;
 }
+#contact-bar[data-co-selected='email'] .icon[data-co-select='email']:after {
+  display: block;
+  background: #db4437;
+}
+#contact-bar[data-co-selected='phone'] #contact-bar-icons {
+  border-bottom: 1px solid #43d854;
+}
 #contact-bar[data-co-selected='phone'] .co.co-phone {
   height: auto;
   opacity: 1;
@@ -435,6 +453,10 @@ section.about-me p {
   -ms-transform: scale(1.5);
   -o-transform: scale(1.5);
   color: #43d854;
+}
+#contact-bar[data-co-selected='phone'] .icon[data-co-select='phone']:after {
+  display: block;
+  background: #43d854;
 }
 #contact-bar-icons {
   display: -webkit-flex;
@@ -451,13 +473,33 @@ section.about-me p {
   -ms-justify-content: space-around;
   justify-content: space-around;
   padding: 2em 0;
+  overflow: hidden;
 }
 #contact-bar-icons a {
+  -webkit-flex-grow: 1;
+  -moz-flex-grow: 1;
+  -ms-flex-grow: 1;
+  flex-grow: 1;
+  text-align: center;
+  padding: 1em 0;
+  height: 100%;
   text-decoration: none;
   color: #ccc;
+  cursor: pointer;
 }
 #contact-bar-icons .icon {
   font-size: 2em;
+  position: relative;
+}
+#contact-bar-icons .icon:after {
+  content: " ";
+  display: none;
+  background: #ccc;
+  width: 2px;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  height: 2em;
 }
 #contact-bar-options {
   display: -webkit-flex;
@@ -469,11 +511,12 @@ section.about-me p {
   -moz-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  border-top: 1px solid #ccc;
 }
 #contact-bar-options a {
   text-decoration: none;
   color: #ccc;
+  display: block;
+  width: 100%;
 }
 #contact-bar-options .icon {
   font-size: 2em;

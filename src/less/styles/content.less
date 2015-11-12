@@ -22,6 +22,10 @@ section.about-me {
 }
 
 
+@skype-brand-color: #12A5F4;
+@gmail-brand-color: #db4437;
+@whatsapp-brand-color: #43d854;
+
 #contact-bar {
   .co {
     height: 0;
@@ -30,7 +34,13 @@ section.about-me {
   }
 
 
+
   &[data-co-selected='skype'] {
+
+    #contact-bar-icons {
+      border-bottom: 1px solid @skype-brand-color;
+    }
+
     .co.co-skype {
       height: auto;
       opacity: 1;
@@ -39,11 +49,23 @@ section.about-me {
 
     .icon[data-co-select='skype'] {
       .transform(scale(1.5));
-      color: #12A5F4;
+      color: @skype-brand-color;
+
+      &:after {
+        display: block;
+        background: @skype-brand-color;
+      }
     }
+
+
   }
 
   &[data-co-selected='email'] {
+
+    #contact-bar-icons {
+      border-bottom: 1px solid @gmail-brand-color;
+    }
+
     .co.co-email {
       height: auto;
       opacity: 1;
@@ -52,11 +74,22 @@ section.about-me {
 
     .icon[data-co-select='email'] {
       .transform(scale(1.5));
-      color: #db4437;
+      color: @gmail-brand-color;
+
+      &:after {
+        display: block;
+        background: @gmail-brand-color;
+      }
     }
+
   }
 
   &[data-co-selected='phone'] {
+
+    #contact-bar-icons {
+      border-bottom: 1px solid @whatsapp-brand-color;
+    }
+
     .co.co-phone {
       height: auto;
       opacity: 1;
@@ -65,8 +98,14 @@ section.about-me {
 
     .icon[data-co-select='phone'] {
       .transform(scale(1.5));
-      color: #43d854;
+      color: @whatsapp-brand-color;
+
+      &:after {
+        display: block;
+        background: @whatsapp-brand-color;
+      }
     }
+
   }
 }
 
@@ -76,14 +115,35 @@ section.about-me {
   .justify-content(space-around);
 
   padding: 2em 0;
+  overflow: hidden;
 
   a {
+    .flex-grow(1);
+    text-align: center;
+    padding: 1em 0;
+    height: 100%;
+
     text-decoration: none;
     color: #ccc;
+    cursor: pointer;
   }
 
   .icon {
     font-size: 2em;
+    position: relative;
+
+  }
+
+  // line under the icon
+  .icon:after {
+    content: " ";
+    display: none;
+    background: #ccc;
+    width: 2px;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    height: 2em;
   }
 }
 
@@ -92,12 +152,11 @@ section.about-me {
   .flex-display();
   .flex-direction(column);
 
-
-  border-top: 1px solid #ccc;
-
   a {
     text-decoration: none;
     color: #ccc;
+    display: block;
+    width: 100%;
   }
 
   .icon {

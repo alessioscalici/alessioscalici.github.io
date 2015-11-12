@@ -26,35 +26,30 @@ html(lang='en')
     meta(name="theme-color" content="#ffffff")
   body
 
-    #top-bar
+    //#top-bar
       button#hamburger.icon.icon-menu
 
     #page-wrapper
       #menu-token
 
-        .rt-track#track-about-me
-          .rt-token-out ABOUT ME
-            .aboutme-icon
-          .rt-spot ABOUT ME
-            .aboutme-icon
-            .rt-token-in.topic-aboutme ABOUT ME
-              .aboutme-icon
+        mixin rt-track(name, icon, text)
+          .rt-track(id!='track-'+name)
+            .rt-token.rt-token-out
+              .icon(class!=icon)
+              div= text
+            .rt-token.rt-spot
+              .icon(class!=icon)
+              div= text
+              .rt-token.rt-token-in.topic-aboutme
+                .icon(class!=icon)
+                div= text
 
-        //.rt-track#track-career
-          .rt-token-out CAREER
-            span.icon.icon-hammer
-          .rt-spot CAREER
-            span.icon.icon-hammer
-            .rt-token-in.topic-career CAREER
-              span.icon.icon-hammer
+        //+rt-track('about-me', 'icon-aboutme', 'Contact me')
+        //+rt-track('projects', 'icon-lab', 'Projects')
 
-        //.rt-track#track-contacts
-          .rt-token-out CONTACTS
-            span.icon.icon-address-book
-          .rt-spot CONTACTS
-            span.icon.icon-address-book
-            .rt-token-in.topic-contacts CONTACTS
-              span.icon.icon-address-book
+
+
+
 
       #content-wrapper
         .menu-placeholder
@@ -62,7 +57,7 @@ html(lang='en')
           section.about-me
             .anchor#about-me
             h1
-              .aboutme-icon
+              .icon-aboutme
               | Alessio Scalici
 
             p Passionate sotftware engineer and web developer.
@@ -73,9 +68,12 @@ html(lang='en')
                   .icon.icon-github
                 a(href='https://ie.linkedin.com/in/alessioscalici' target='_blank')
                   .icon.icon-linkedin
-                .icon.icon-skype(data-co-select='skype')
-                .icon.icon-envelop(data-co-select='email')
-                .icon.icon-phone(data-co-select='phone')
+                a
+                  .icon.icon-skype(data-co-select='skype')
+                a
+                  .icon.icon-envelop(data-co-select='email')
+                a
+                  .icon.icon-phone(data-co-select='phone')
               #contact-bar-options.hidden
                 .co.co-skype
                   .co-head alessioscalici
@@ -113,40 +111,12 @@ html(lang='en')
                       .icon.icon-envelop
                       span Send an email
 
-
-          //section.career
-            .anchor#career
-            h1 Career
-            .career-card
-              .header
-                .title Lead UI/UX Engineer
-                .company Edudoc ltd
-                .location Dublin (Ireland)
-                .date-from 04-2015
-                .date.to NOW
-              .body
-                ul.duties
-                  li Designed  Angular web client architecture
-                  li Led and mentored a 5 people front-end development team
-                  li Ensured the project followed best practices through code review
-                ul.achievements
-                  li Delivered the version 1 of the web client meeting the deadline
-                  li Automated translation optimization, allowing the team to save time
-                ul.technologies
-                  li AngularJS
-                  li Bootstrap
-                  li SASS
-                  li CSS 3
-                  li HTML 5
-                  li Jasmine
-                  li Karma
-                  li Protractor
-                  li GIT
-                  li Gulp
-                  li NodeJS
-                  li JIRA
-                  li Sublime text editor
-                  li Chrome Dev tools
+          //section.projects
+            .anchor#projects
+            h1 Projects
+            .project-card
+              .project-name ptq-js
+              a.project-link(href='ptq-js') ptq-js
 
 
 

@@ -10,20 +10,30 @@
 
 
 
-@rt-transition: left .8s ease, transform .8s ease;
+@rt-transition: left .8s ease, transform .8s ease, -webkit-transform .8s ease;
 
-.rt-token-shape {
 
-  .flex-display();
-  .flex-direction(column-reverse);
-  align-items: center;
-  justify-content: center;
+#menu-token {
+  z-index: 700;
+
+
+}
+
+.rt-token {
+
+
+  text-align: center;
+  overflow: hidden;
 
   position: absolute;
   top: 0;
   height: @rt-diameter;
   width: @rt-diameter;
   border-radius: 50%;
+
+  .icon {
+    margin-top: @rt-diameter / 3.5;
+  }
 
 }
 
@@ -38,7 +48,7 @@
 
 
   .rt-spot {
-    &:extend(.rt-token-shape);
+
     background: @rt-spot-background;
     color: @rt-spot-color;
     g {
@@ -58,10 +68,12 @@
     .transform-origin();
     .rotate(-180deg);
     .transition(@rt-transition);
+    -webkit-transition: left .5s ease, -webkit-transform .5s ease;
+
   }
 
   .rt-token-in {
-    &:extend(.rt-token-shape);
+
     //background: @rt-token-in-background;
     color: @rt-token-in-color;
     left: -@rt-diameter;
@@ -71,7 +83,7 @@
   }
 
   .rt-token-out {
-    &:extend(.rt-token-shape);
+
     background: @rt-token-out-background;
     color: @rt-token-out-color;
     left: -@rt-diameter / 2;
@@ -98,6 +110,7 @@
 
   .icon {
     font-size: 2em;
+    width: 100%;
   }
 }
 
@@ -112,12 +125,11 @@
 }
 
 
-.aboutme-icon {
+.icon.icon-aboutme {
   svg {
-    height: 4em;
-  }
-  g {
-    fill: white;
+    height: 1em;
+    width: 100%;
   }
 }
+
 
