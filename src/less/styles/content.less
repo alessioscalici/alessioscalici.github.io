@@ -10,9 +10,117 @@
     text-transform: uppercase;
   }
   p {
-    text-align: justify;
+    text-align: center;
   }
 }
+
+
+section.about-me {
+  p {
+    text-align: center;
+  }
+}
+
+
+#contact-bar {
+  .co {
+    height: 0;
+    opacity: 0;
+    .transition(opacity .5s ease);
+  }
+
+
+  &[data-co-selected='skype'] {
+    .co.co-skype {
+      height: auto;
+      opacity: 1;
+      .transition(opacity .5s ease);
+    }
+
+    .icon[data-co-select='skype'] {
+      .transform(scale(1.5));
+      color: #12A5F4;
+    }
+  }
+
+  &[data-co-selected='email'] {
+    .co.co-email {
+      height: auto;
+      opacity: 1;
+      .transition(opacity .5s ease);
+    }
+
+    .icon[data-co-select='email'] {
+      .transform(scale(1.5));
+      color: #db4437;
+    }
+  }
+
+  &[data-co-selected='phone'] {
+    .co.co-phone {
+      height: auto;
+      opacity: 1;
+      .transition(opacity .5s ease);
+    }
+
+    .icon[data-co-select='phone'] {
+      .transform(scale(1.5));
+      color: #43d854;
+    }
+  }
+}
+
+#contact-bar-icons {
+  .flex-display();
+  .flex-direction(row);
+  .justify-content(space-around);
+
+  padding: 2em 0;
+
+  a {
+    text-decoration: none;
+    color: #ccc;
+  }
+
+  .icon {
+    font-size: 2em;
+  }
+}
+
+#contact-bar-options {
+
+  .flex-display();
+  .flex-direction(column);
+
+
+  border-top: 1px solid #ccc;
+
+  a {
+    text-decoration: none;
+    color: #ccc;
+  }
+
+  .icon {
+    font-size: 2em;
+  }
+
+  .co-head {
+    text-align: center;
+    padding: 2em 0;
+  }
+  .co-opts {
+    .flex-display();
+    .flex-direction(row);
+    .justify-content(space-around);
+    text-align: center;
+    padding: 1em 0;
+  }
+
+}
+
+
+
+
 
 
 section.career {

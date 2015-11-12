@@ -221,7 +221,10 @@ a img {
   -ms-flex-direction: row;
   flex-direction: row;
 }
-#content-wrapper #menu-placeholder {
+#content-wrapper .content {
+  width: 100%;
+}
+#content-wrapper .menu-placeholder {
   -webkit-flex-basis: 0;
   -moz-flex-basis: 0;
   -ms-flex-basis: 0;
@@ -241,12 +244,12 @@ a img {
   -o-transition: min-width 0.5s ease;
 }
 @media screen and (min-width: 550px) {
-  #content-wrapper #menu-placeholder {
+  #content-wrapper .menu-placeholder {
     min-width: 102px;
   }
 }
 @media screen and (min-width: 800px) {
-  #content-wrapper #menu-placeholder {
+  #content-wrapper .menu-placeholder {
     min-width: 180px;
   }
 }
@@ -277,6 +280,7 @@ a img {
   width: 120px;
   background: #ccc;
   margin-top: 3px;
+  text-transform: uppercase;
 }
 .rt-track .rt-spot {
   background: #ccc;
@@ -374,7 +378,126 @@ a img {
   text-transform: uppercase;
 }
 #content-wrapper p {
-  text-align: justify;
+  text-align: center;
+}
+section.about-me p {
+  text-align: center;
+}
+#contact-bar .co {
+  height: 0;
+  opacity: 0;
+  -webkit-transition: opacity 0.5s ease;
+  -moz-transition: opacity 0.5s ease;
+  -ms-transition: opacity 0.5s ease;
+  -o-transition: opacity 0.5s ease;
+}
+#contact-bar[data-co-selected='skype'] .co.co-skype {
+  height: auto;
+  opacity: 1;
+  -webkit-transition: opacity 0.5s ease;
+  -moz-transition: opacity 0.5s ease;
+  -ms-transition: opacity 0.5s ease;
+  -o-transition: opacity 0.5s ease;
+}
+#contact-bar[data-co-selected='skype'] .icon[data-co-select='skype'] {
+  -webkit-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  -o-transform: scale(1.5);
+  color: #12A5F4;
+}
+#contact-bar[data-co-selected='email'] .co.co-email {
+  height: auto;
+  opacity: 1;
+  -webkit-transition: opacity 0.5s ease;
+  -moz-transition: opacity 0.5s ease;
+  -ms-transition: opacity 0.5s ease;
+  -o-transition: opacity 0.5s ease;
+}
+#contact-bar[data-co-selected='email'] .icon[data-co-select='email'] {
+  -webkit-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  -o-transform: scale(1.5);
+  color: #db4437;
+}
+#contact-bar[data-co-selected='phone'] .co.co-phone {
+  height: auto;
+  opacity: 1;
+  -webkit-transition: opacity 0.5s ease;
+  -moz-transition: opacity 0.5s ease;
+  -ms-transition: opacity 0.5s ease;
+  -o-transition: opacity 0.5s ease;
+}
+#contact-bar[data-co-selected='phone'] .icon[data-co-select='phone'] {
+  -webkit-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  -o-transform: scale(1.5);
+  color: #43d854;
+}
+#contact-bar-icons {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-justify-content: space-around;
+  -moz-justify-content: space-around;
+  -ms-justify-content: space-around;
+  justify-content: space-around;
+  padding: 2em 0;
+}
+#contact-bar-icons a {
+  text-decoration: none;
+  color: #ccc;
+}
+#contact-bar-icons .icon {
+  font-size: 2em;
+}
+#contact-bar-options {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  border-top: 1px solid #ccc;
+}
+#contact-bar-options a {
+  text-decoration: none;
+  color: #ccc;
+}
+#contact-bar-options .icon {
+  font-size: 2em;
+}
+#contact-bar-options .co-head {
+  text-align: center;
+  padding: 2em 0;
+}
+#contact-bar-options .co-opts {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-justify-content: space-around;
+  -moz-justify-content: space-around;
+  -ms-justify-content: space-around;
+  justify-content: space-around;
+  text-align: center;
+  padding: 1em 0;
 }
 section.career .career-card {
   border: 1px solid #ccc;

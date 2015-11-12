@@ -40,15 +40,15 @@ html(lang='en')
             .rt-token-in.topic-aboutme ABOUT ME
               .aboutme-icon
 
-        .rt-track#track-career
+        //.rt-track#track-career
           .rt-token-out CAREER
-            span.icon.icon-office
+            span.icon.icon-hammer
           .rt-spot CAREER
-            span.icon.icon-office
+            span.icon.icon-hammer
             .rt-token-in.topic-career CAREER
-              span.icon.icon-office
+              span.icon.icon-hammer
 
-        .rt-track#track-contacts
+        //.rt-track#track-contacts
           .rt-token-out CONTACTS
             span.icon.icon-address-book
           .rt-spot CONTACTS
@@ -57,17 +57,64 @@ html(lang='en')
               span.icon.icon-address-book
 
       #content-wrapper
-        #menu-placeholder
-        #content
+        .menu-placeholder
+        .content
           section.about-me
             .anchor#about-me
             h1
               .aboutme-icon
               | Alessio Scalici
 
-            p Passionate sotftware engineer and web developer, highly specialized in front-end technologies but with a knowledge of the whole stack, able to design a web client visual logic as well as a RESTful API. I build web applications using modern frameworks as AngularJS, and I'm always on the edge to check out new technologies. I really care about the code quality, always making every effort to maximize the project mantainability, testability and efficiency. I strongly believe in automation as a way to save time and minimize human errors. Teamwork is also very important to me, as sharing knowledge it's the best way to grow as a team and as individuals.
+            p Passionate sotftware engineer and web developer.
 
-          section.career
+            #contact-bar
+              #contact-bar-icons
+                a(href='https://github.com/alessioscalici' target='_blank')
+                  .icon.icon-github
+                a(href='https://ie.linkedin.com/in/alessioscalici' target='_blank')
+                  .icon.icon-linkedin
+                .icon.icon-skype(data-co-select='skype')
+                .icon.icon-envelop(data-co-select='email')
+                .icon.icon-phone(data-co-select='phone')
+              #contact-bar-options.hidden
+                .co.co-skype
+                  .co-head alessioscalici
+                  .co-opts
+                    a(href='skype:alessioscalici?add')
+                      .icon.icon-plus
+                      span Add contact
+                    a(href='skype:alessioscalici?call')
+                      .icon.icon-phone
+                      span Call
+                    a(href='skype:alessioscalici?chat')
+                      .icon.icon-envelop
+                      span Message
+                .co.co-phone
+                  .co-head +353 831671040 (Ireland)
+                  .co-opts
+                    a(href='tel:+353831671040')
+                      .icon.icon-phone
+                      span Call
+                    a(href='sms://+353831671040?body=Hi%20Alessio, ')
+                      .icon.icon-envelop
+                      span SMS
+                  .co-head +39 3488860309 (Italy)
+                  .co-opts
+                    a(href='tel:+393488860309')
+                      .icon.icon-phone
+                      span Call
+                    a(href='sms://+393488860309?body=Hi%20Alessio, ')
+                      .icon.icon-envelop
+                      span SMS
+                .co.co-email
+                  .co-head alessio.scalici@gmail.com
+                  .co-opts
+                    a(href='mailto:alessio.scalici@gmail.com?subject:Hi Alessio')
+                      .icon.icon-envelop
+                      span Send an email
+
+
+          //section.career
             .anchor#career
             h1 Career
             .career-card
@@ -101,14 +148,6 @@ html(lang='en')
                   li Sublime text editor
                   li Chrome Dev tools
 
-          section.contacts
-            .anchor#contacts
-            h1 Contacts
-            .icon.icon-phone +353 831671040
-            .icon.icon-envelop alessio.scalici@gmail.com
-            .icon.icon-skype alessioscalici
-            a(href='https://ie.linkedin.com/in/alessioscalici')
-              .icon.icon-linkedin LinkedIn
 
 
 
