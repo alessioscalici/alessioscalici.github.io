@@ -1,21 +1,21 @@
 
-#content-wrapper {
-
-  padding: 1em;
-
-  h1 {
-    font-size: 2em;
-    text-align: center;
-    font-family: Gruppo, cursive;
-    text-transform: uppercase;
-  }
-  p {
-    text-align: center;
-  }
-}
 
 
 section.about-me {
+
+  .icon-aboutme {
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 2.5em;
+    text-align: center;
+    letter-spacing: 3px;
+    font-weight: 100;
+    font-family: Josefin Sans, cursive;
+    text-transform: uppercase;
+    margin-top: 0.5em;
+  }
   p {
     text-align: center;
   }
@@ -25,89 +25,71 @@ section.about-me {
 @skype-brand-color: #12A5F4;
 @gmail-brand-color: #db4437;
 @whatsapp-brand-color: #43d854;
+@github-brand-color: #ff9933;
+@linkedin-brand-color: #0077b5;
+
+@contact-icon-scale: 2;
 
 #contact-bar {
+
+  overflow: hidden;
+
   .co {
     height: 0;
+    visibility: hidden;
     opacity: 0;
     .transition(opacity .5s ease);
   }
 
 
 
-  &[data-co-selected='skype'] {
+  // setup contact icons mixin
+  .setup-contact-icon(@selectAttr, @color) {
 
-    #contact-bar-icons {
-      border-bottom: 1px solid @skype-brand-color;
+    .icon[data-co-select='@{selectAttr}']:hover {
+      color: @color;
     }
 
-    .co.co-skype {
-      height: auto;
-      opacity: 1;
-      .transition(opacity .5s ease);
-    }
+    &[data-co-selected='@{selectAttr}'] {
 
-    .icon[data-co-select='skype'] {
-      .transform(scale(1.5));
-      color: @skype-brand-color;
+      #contact-bar-icons {
+        border-bottom: 1px solid @color;
+      }
 
-      &:after {
-        display: block;
-        background: @skype-brand-color;
+      .co.co-@{selectAttr} {
+        height: auto;
+        visibility: visible;
+        opacity: 1;
+        .transition(opacity .5s ease);
+      }
+
+      .icon[data-co-select='@{selectAttr}'] {
+        .transform(scale(@contact-icon-scale));
+        pointer-events: none; // avoid element overlapping causing clicking the scaled element
+        color: @color;
+
+        &:after {
+          display: block;
+          background: @color;
+        }
+      }
+
+      #contact-bar-options a:hover {
+        color: @color;
       }
     }
-
-
   }
 
-  &[data-co-selected='email'] {
+  .setup-contact-icon(linkedin, @linkedin-brand-color);
+  .setup-contact-icon(github, @github-brand-color);
+  .setup-contact-icon(skype, @skype-brand-color);
+  .setup-contact-icon(email, @gmail-brand-color);
+  .setup-contact-icon(phone, @whatsapp-brand-color);
 
-    #contact-bar-icons {
-      border-bottom: 1px solid @gmail-brand-color;
-    }
-
-    .co.co-email {
-      height: auto;
-      opacity: 1;
-      .transition(opacity .5s ease);
-    }
-
-    .icon[data-co-select='email'] {
-      .transform(scale(1.5));
-      color: @gmail-brand-color;
-
-      &:after {
-        display: block;
-        background: @gmail-brand-color;
-      }
-    }
-
-  }
-
-  &[data-co-selected='phone'] {
-
-    #contact-bar-icons {
-      border-bottom: 1px solid @whatsapp-brand-color;
-    }
-
-    .co.co-phone {
-      height: auto;
-      opacity: 1;
-      .transition(opacity .5s ease);
-    }
-
-    .icon[data-co-select='phone'] {
-      .transform(scale(1.5));
-      color: @whatsapp-brand-color;
-
-      &:after {
-        display: block;
-        background: @whatsapp-brand-color;
-      }
-    }
-
-  }
 }
+
+
+
 
 #contact-bar-icons {
   .flex-display();
@@ -128,7 +110,7 @@ section.about-me {
     cursor: pointer;
   }
 
-  .icon {
+  a.icon {
     font-size: 2em;
     position: relative;
 
@@ -139,9 +121,9 @@ section.about-me {
     content: " ";
     display: none;
     background: #ccc;
-    width: 2px;
+    width: 1px;
     position: absolute;
-    top: 90%;
+    top: 65%;
     left: 50%;
     height: 2em;
   }
@@ -161,11 +143,12 @@ section.about-me {
 
   .icon {
     font-size: 2em;
+    margin-bottom: .3em;
   }
 
   .co-head {
     text-align: center;
-    padding: 2em 0;
+    padding: 2em 0 1em 0;
   }
   .co-opts {
     .flex-display();
@@ -177,29 +160,3 @@ section.about-me {
 
 }
 
-
-
-
-
-
-section.career {
-  .career-card {
-    border: 1px solid #ccc;
-    .border-radius(1em);
-
-
-    overflow: hidden;
-
-    .header {
-      background: #ccc;
-      color: black;
-      padding: 5px;
-    }
-
-    .body {
-
-      padding: 5px;
-    }
-
-  }
-}

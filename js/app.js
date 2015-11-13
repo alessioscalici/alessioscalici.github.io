@@ -26,9 +26,16 @@
 
   $('#contact-bar [data-co-select]').click(function () {
     var attrValue = $(this).attr('data-co-select');
-    contactBar.attr('data-co-selected', attrValue);
 
-  //  $('body,html').stop().animate({scrollTop: contactBar.position().top}, 500);
+    if (contactBar.attr('data-co-selected') === attrValue)
+      contactBar.attr('data-co-selected', '');
+    else {
+      contactBar.attr('data-co-selected', attrValue);
+      $('body,html').stop().animate({scrollTop: contactBar.position().top}, 500);
+    }
+
+
+
   });
 
 

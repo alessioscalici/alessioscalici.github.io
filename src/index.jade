@@ -52,29 +52,38 @@ html(lang='en')
 
 
       #content-wrapper
-        .menu-placeholder
-        .content
-          section.about-me
+
+        section.about-me
+          //.menu-placeholder
+          .content
             .anchor#about-me
-            h1
-              .icon-aboutme
-              | Alessio Scalici
+            .icon-aboutme
+            h1 Alessio Scalici
 
             p Passionate sotftware engineer and web developer.
 
             #contact-bar
               #contact-bar-icons
-                a(href='https://github.com/alessioscalici' target='_blank')
-                  .icon.icon-github
-                a(href='https://ie.linkedin.com/in/alessioscalici' target='_blank')
-                  .icon.icon-linkedin
-                a
-                  .icon.icon-skype(data-co-select='skype')
-                a
-                  .icon.icon-envelop(data-co-select='email')
-                a
-                  .icon.icon-phone(data-co-select='phone')
+                a.icon.icon-linkedin(data-co-select='linkedin')
+                a.icon.icon-github(data-co-select='github')
+                a.icon.icon-skype(data-co-select='skype')
+                a.icon.icon-envelop(data-co-select='email')
+                a.icon.icon-phone(data-co-select='phone')
               #contact-bar-options.hidden
+                .co.co-linkedin
+                  .co-head LinkedIn profile
+                  .co-opts
+                    a(href='https://ie.linkedin.com/in/alessioscalici' target='_blank')
+                      .icon.icon-arrow-right2
+                      span Visit profile
+
+                .co.co-github
+                  .co-head GitHub account
+                  .co-opts
+                    a(href='https://github.com/alessioscalici' target='_blank')
+                      .icon.icon-arrow-right2
+                      span Visit account
+
                 .co.co-skype
                   .co-head alessioscalici
                   .co-opts
@@ -111,7 +120,11 @@ html(lang='en')
                       .icon.icon-envelop
                       span Send an email
 
-          //section.projects
+
+
+        //section.projects
+          .menu-placeholder
+          .content
             .anchor#projects
             h1 Projects
             .project-card

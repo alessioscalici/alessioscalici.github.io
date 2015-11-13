@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Gruppo);
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:100);
 /**
  * Global Reset of all HTML Elements
  *
@@ -216,15 +216,26 @@ a img {
   display: -ms-flexbox;
   display: -ms-flex;
   display: flex;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+#content-wrapper section {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: -ms-flex;
+  display: flex;
   -webkit-flex-direction: row;
   -moz-flex-direction: row;
   -ms-flex-direction: row;
   flex-direction: row;
 }
-#content-wrapper .content {
+#content-wrapper section .content {
   width: 100%;
 }
-#content-wrapper .menu-placeholder {
+#content-wrapper section .menu-placeholder {
   -webkit-flex-basis: 0;
   -moz-flex-basis: 0;
   -ms-flex-basis: 0;
@@ -244,12 +255,12 @@ a img {
   -o-transition: min-width 0.5s ease;
 }
 @media screen and (min-width: 550px) {
-  #content-wrapper .menu-placeholder {
+  #content-wrapper section .menu-placeholder {
     min-width: 102px;
   }
 }
 @media screen and (min-width: 800px) {
-  #content-wrapper .menu-placeholder {
+  #content-wrapper section .menu-placeholder {
     min-width: 180px;
   }
 }
@@ -369,34 +380,102 @@ a img {
   border-width: 0;
   font-size: 2em;
 }
-#content-wrapper {
-  padding: 1em;
-}
-#content-wrapper h1 {
-  font-size: 2em;
+section.about-me .icon-aboutme {
   text-align: center;
-  font-family: Gruppo, cursive;
+}
+section.about-me h1 {
+  font-size: 2.5em;
+  text-align: center;
+  letter-spacing: 3px;
+  font-weight: 100;
+  font-family: Josefin Sans, cursive;
   text-transform: uppercase;
-}
-#content-wrapper p {
-  text-align: center;
+  margin-top: 0.5em;
 }
 section.about-me p {
   text-align: center;
 }
+#contact-bar {
+  overflow: hidden;
+}
 #contact-bar .co {
   height: 0;
+  visibility: hidden;
   opacity: 0;
   -webkit-transition: opacity 0.5s ease;
   -moz-transition: opacity 0.5s ease;
   -ms-transition: opacity 0.5s ease;
   -o-transition: opacity 0.5s ease;
 }
+#contact-bar .icon[data-co-select='linkedin']:hover {
+  color: #0077b5;
+}
+#contact-bar[data-co-selected='linkedin'] #contact-bar-icons {
+  border-bottom: 1px solid #0077b5;
+}
+#contact-bar[data-co-selected='linkedin'] .co.co-linkedin {
+  height: auto;
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition: opacity 0.5s ease;
+  -moz-transition: opacity 0.5s ease;
+  -ms-transition: opacity 0.5s ease;
+  -o-transition: opacity 0.5s ease;
+}
+#contact-bar[data-co-selected='linkedin'] .icon[data-co-select='linkedin'] {
+  -webkit-transform: scale(2);
+  -moz-transform: scale(2);
+  -ms-transform: scale(2);
+  -o-transform: scale(2);
+  pointer-events: none;
+  color: #0077b5;
+}
+#contact-bar[data-co-selected='linkedin'] .icon[data-co-select='linkedin']:after {
+  display: block;
+  background: #0077b5;
+}
+#contact-bar[data-co-selected='linkedin'] #contact-bar-options a:hover {
+  color: #0077b5;
+}
+#contact-bar .icon[data-co-select='github']:hover {
+  color: #ff9933;
+}
+#contact-bar[data-co-selected='github'] #contact-bar-icons {
+  border-bottom: 1px solid #ff9933;
+}
+#contact-bar[data-co-selected='github'] .co.co-github {
+  height: auto;
+  visibility: visible;
+  opacity: 1;
+  -webkit-transition: opacity 0.5s ease;
+  -moz-transition: opacity 0.5s ease;
+  -ms-transition: opacity 0.5s ease;
+  -o-transition: opacity 0.5s ease;
+}
+#contact-bar[data-co-selected='github'] .icon[data-co-select='github'] {
+  -webkit-transform: scale(2);
+  -moz-transform: scale(2);
+  -ms-transform: scale(2);
+  -o-transform: scale(2);
+  pointer-events: none;
+  color: #ff9933;
+}
+#contact-bar[data-co-selected='github'] .icon[data-co-select='github']:after {
+  display: block;
+  background: #ff9933;
+}
+#contact-bar[data-co-selected='github'] #contact-bar-options a:hover {
+  color: #ff9933;
+}
+#contact-bar .icon[data-co-select='skype']:hover {
+  color: #12A5F4;
+}
 #contact-bar[data-co-selected='skype'] #contact-bar-icons {
   border-bottom: 1px solid #12A5F4;
 }
 #contact-bar[data-co-selected='skype'] .co.co-skype {
   height: auto;
+  visibility: visible;
   opacity: 1;
   -webkit-transition: opacity 0.5s ease;
   -moz-transition: opacity 0.5s ease;
@@ -404,21 +483,29 @@ section.about-me p {
   -o-transition: opacity 0.5s ease;
 }
 #contact-bar[data-co-selected='skype'] .icon[data-co-select='skype'] {
-  -webkit-transform: scale(1.5);
-  -moz-transform: scale(1.5);
-  -ms-transform: scale(1.5);
-  -o-transform: scale(1.5);
+  -webkit-transform: scale(2);
+  -moz-transform: scale(2);
+  -ms-transform: scale(2);
+  -o-transform: scale(2);
+  pointer-events: none;
   color: #12A5F4;
 }
 #contact-bar[data-co-selected='skype'] .icon[data-co-select='skype']:after {
   display: block;
   background: #12A5F4;
 }
+#contact-bar[data-co-selected='skype'] #contact-bar-options a:hover {
+  color: #12A5F4;
+}
+#contact-bar .icon[data-co-select='email']:hover {
+  color: #db4437;
+}
 #contact-bar[data-co-selected='email'] #contact-bar-icons {
   border-bottom: 1px solid #db4437;
 }
 #contact-bar[data-co-selected='email'] .co.co-email {
   height: auto;
+  visibility: visible;
   opacity: 1;
   -webkit-transition: opacity 0.5s ease;
   -moz-transition: opacity 0.5s ease;
@@ -426,21 +513,29 @@ section.about-me p {
   -o-transition: opacity 0.5s ease;
 }
 #contact-bar[data-co-selected='email'] .icon[data-co-select='email'] {
-  -webkit-transform: scale(1.5);
-  -moz-transform: scale(1.5);
-  -ms-transform: scale(1.5);
-  -o-transform: scale(1.5);
+  -webkit-transform: scale(2);
+  -moz-transform: scale(2);
+  -ms-transform: scale(2);
+  -o-transform: scale(2);
+  pointer-events: none;
   color: #db4437;
 }
 #contact-bar[data-co-selected='email'] .icon[data-co-select='email']:after {
   display: block;
   background: #db4437;
 }
+#contact-bar[data-co-selected='email'] #contact-bar-options a:hover {
+  color: #db4437;
+}
+#contact-bar .icon[data-co-select='phone']:hover {
+  color: #43d854;
+}
 #contact-bar[data-co-selected='phone'] #contact-bar-icons {
   border-bottom: 1px solid #43d854;
 }
 #contact-bar[data-co-selected='phone'] .co.co-phone {
   height: auto;
+  visibility: visible;
   opacity: 1;
   -webkit-transition: opacity 0.5s ease;
   -moz-transition: opacity 0.5s ease;
@@ -448,15 +543,19 @@ section.about-me p {
   -o-transition: opacity 0.5s ease;
 }
 #contact-bar[data-co-selected='phone'] .icon[data-co-select='phone'] {
-  -webkit-transform: scale(1.5);
-  -moz-transform: scale(1.5);
-  -ms-transform: scale(1.5);
-  -o-transform: scale(1.5);
+  -webkit-transform: scale(2);
+  -moz-transform: scale(2);
+  -ms-transform: scale(2);
+  -o-transform: scale(2);
+  pointer-events: none;
   color: #43d854;
 }
 #contact-bar[data-co-selected='phone'] .icon[data-co-select='phone']:after {
   display: block;
   background: #43d854;
+}
+#contact-bar[data-co-selected='phone'] #contact-bar-options a:hover {
+  color: #43d854;
 }
 #contact-bar-icons {
   display: -webkit-flex;
@@ -487,7 +586,7 @@ section.about-me p {
   color: #ccc;
   cursor: pointer;
 }
-#contact-bar-icons .icon {
+#contact-bar-icons a.icon {
   font-size: 2em;
   position: relative;
 }
@@ -495,9 +594,9 @@ section.about-me p {
   content: " ";
   display: none;
   background: #ccc;
-  width: 2px;
+  width: 1px;
   position: absolute;
-  top: 90%;
+  top: 65%;
   left: 50%;
   height: 2em;
 }
@@ -520,10 +619,11 @@ section.about-me p {
 }
 #contact-bar-options .icon {
   font-size: 2em;
+  margin-bottom: .3em;
 }
 #contact-bar-options .co-head {
   text-align: center;
-  padding: 2em 0;
+  padding: 2em 0 1em 0;
 }
 #contact-bar-options .co-opts {
   display: -webkit-flex;
@@ -541,22 +641,4 @@ section.about-me p {
   justify-content: space-around;
   text-align: center;
   padding: 1em 0;
-}
-section.career .career-card {
-  border: 1px solid #ccc;
-  -webkit-border-radius: 1em;
-  -moz-border-radius: 1em;
-  border-radius: 1em;
-  -moz-background-clip: padding;
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
-  overflow: hidden;
-}
-section.career .career-card .header {
-  background: #ccc;
-  color: black;
-  padding: 5px;
-}
-section.career .career-card .body {
-  padding: 5px;
 }
