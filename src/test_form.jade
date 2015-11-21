@@ -1,0 +1,25 @@
+doctype html
+html(lang='en')
+  head
+    title Form test
+    meta(charset='utf8')
+    meta(viewport='width=device-width, initial-scale=1')
+
+  body
+    form#test-form
+      div
+        input#first-input
+      div
+        input#second-input
+      div
+        input#third-input
+      div
+        input#fourth-input
+      div
+        button#ok-button Ok
+
+    script.
+      document.write('Origin of this page: ' + location.origin);
+      var elems = document.getElementById('ok-button').addEventListener('click', function () {
+        alert('this script is from the form page!');
+      });

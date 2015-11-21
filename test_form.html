@@ -1,0 +1,4 @@
+<!DOCTYPE html><html lang="en"><head><title>Form test</title><meta charset="utf8"><meta viewport="width=device-width, initial-scale=1"></head><body><form id="test-form"><div><input id="first-input"></div><div><input id="second-input"></div><div><input id="third-input"></div><div><input id="fourth-input"></div><div><button id="ok-button">Ok</button></div></form><script>document.write('Origin of this page: ' + location.origin);
+var elems = document.getElementById('ok-button').addEventListener('click', function () {
+  alert('this script is from the form page!');
+});</script></body></html>
